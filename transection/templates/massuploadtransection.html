@@ -1,0 +1,17 @@
+{% extends "admin/base.html"%}
+{% block content%}
+    <ol>
+        <lh>To Upload Data in MASS please make sure</lh>
+        <li>the file should be in excel format(.xls or .xlsx)</li>
+        <li>First row should contains the header</li>
+        <li>Headers are [id,date,customer*,credit,amount,remarks] *here customer is customer code</li>
+        <li>Only Remarks can be Blank all other filds Should have some value</li>
+        <li>In credit field you can have 0/1 or True/False</li>
+    </ol>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        please wait it may take some time to upload the file and process the data
+        <input type='submit' value="submit">
+    </form>
+{% endblock%}
